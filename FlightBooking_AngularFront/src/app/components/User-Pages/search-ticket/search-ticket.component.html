@@ -1,0 +1,139 @@
+
+<div class="wrapper" >
+    <div class="container">
+      <div class="forms">
+        <div class="form login">
+          <span class="title">Ticket</span>
+          <form >
+          <div class="user-details">
+              <div class="input-box">
+                <span class="details">PNR</span>
+                <input type="text" 
+                (change)="validatePNR()"
+                [(ngModel)]="ticket.pnr"
+                name="pnr"
+                disabled={{PNRFlag}}
+                placeholder="Enter PNR number" />
+              </div>
+              <div class="input-box">
+                <span class="details">Mail ID</span>
+                <input type="text" 
+                (change)="validateMail()"
+                [(ngModel)]="ticket.mail"
+                name="mail"
+                disabled={{EmialFlag}}
+                placeholder="Enter Email Id" />
+              </div>
+              <div class="edit">
+                <mat-icon class="iicon" (click)="formSubmit()">search</mat-icon>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- For Table Data -->
+    <div *ngIf="detailsFlag" class="tablewrapper">
+        <div class="container">
+        
+            <div style="margin-top: 10px;">
+            
+                <mat-form-field appearance="standard">
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                  </mat-form-field>
+        
+                  <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource" matSort>
+
+                       <!-- ID Column -->
+                       <ng-container matColumnDef="PNR">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> PNR </th>
+                        <td mat-cell *matCellDef="let row"> {{row.pnr}} </td>
+                      </ng-container>
+                  
+                      <!-- ID Column -->
+                      <ng-container matColumnDef="flightNumber">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Flight Number </th>
+                        <td mat-cell *matCellDef="let row"> {{row.scheduleFlight.flightNumber}} </td>
+                      </ng-container>
+                  
+                      <!-- Progress Column -->
+                      <ng-container matColumnDef="Airline">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Airline </th>
+                        <td mat-cell *matCellDef="let row"> {{row.scheduleFlight.airline}} </td>
+                      </ng-container>
+                  
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="srcAirport">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> From </th>
+                        <td mat-cell *matCellDef="let row"> {{row.scheduleFlight.srcAirport.airportName}} </td>
+                      </ng-container>
+    
+                       <!-- Name Column -->
+                       <ng-container matColumnDef="dstnAirport">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> To </th>
+                        <td mat-cell *matCellDef="let row"> {{row.scheduleFlight.dstnAirport.airportName}} </td>
+                      </ng-container>
+    
+                       <!-- Name Column -->
+                       <ng-container matColumnDef="deptDateTime">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dept Date </th>
+                        <td mat-cell *matCellDef="let row"> {{row.scheduleFlight.deptDateTime}} </td>
+                      </ng-container>
+    
+                       <!-- Name Column -->
+                       <ng-container matColumnDef="Passenger">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Passenger </th>
+                        <td mat-cell *matCellDef="let row"> {{row.noOfPassenger}} </td>
+                      </ng-container>
+    
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="Fare">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fare </th>
+                          <td mat-cell *matCellDef="let row"> {{row.scheduleFlight.ticketCost}} </td>
+                        </ng-container>
+    
+                                       
+                      <!-- Action Column -->
+                        <ng-container matColumnDef="Action">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                            <td mat-cell *matCellDef="let row"> 
+                                <!-- <button mat-icon-button color="primary"> -->
+                                <div class="edit">
+                                    <mat-icon class="iicon" color="primary">edit</mat-icon>
+                                </div>
+                                <div class="edit">
+                                  <mat-icon (click)="deleteTicket(row.bookingId)" class="iicon" color="warn">delete</mat-icon>
+                              </div>
+                                <!-- </button> -->
+                            </td>
+                          </ng-container>
+                  
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  
+                      <!-- Row shown when there is no matching data. -->
+                      <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                      </tr>
+                    </table>
+                  
+                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+                  </div>
+        
+            </div>
+        </div>
+        </div>
+
+        <div *ngIf="!NotFoundFlag">
+          <mat-card>No Record Found</mat-card>
+                  </div>
+  </div>
+
+  
+       
+          
+    
+  

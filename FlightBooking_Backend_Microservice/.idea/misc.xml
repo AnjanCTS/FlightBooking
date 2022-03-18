@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/eureka-service-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/airport-module/pom.xml" />
+        <option value="$PROJECT_DIR$/flight-module/pom.xml" />
+        <option value="$PROJECT_DIR$/user-module/pom.xml" />
+        <option value="$PROJECT_DIR$/API-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/FMS-JWT-Authentication-LogIn-Logout/pom.xml" />
+        <option value="$PROJECT_DIR$/Flight-Booking-Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/User-Authorization-Module/pom.xml" />
+        <option value="$PROJECT_DIR$/Booking-Module/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

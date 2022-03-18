@@ -1,0 +1,16 @@
+<mat-card class="con">
+
+    <mat-action-list>
+      
+        <div mat-subheader>Menu</div>
+
+          <button routerLink="/user-dashboard" mat-list-item><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
+          <!-- Flight details -->
+          <button mat-list-item  routerLink="/user-dashboard/ticketSearch">
+          <mat-icon mat-list-icon>search</mat-icon>Search PNR</button>
+          <!-- <button mat-list-item  routerLink="/user-dashboard/ticketSearch">
+          <mat-icon mat-list-icon>manage_accounts</mat-icon>Manage Booking</button> -->
+          <button mat-list-item  routerLink="/user-dashboard/flightSearch">
+          <mat-icon mat-list-icon>flight</mat-icon>Book Flight</button>
+    </mat-action-list>
+</mat-card>

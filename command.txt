@@ -1,0 +1,10 @@
+touch .gitignore
+git config --global user.name Anjan
+git config --global user.emai "anjan@mail.com"
+git init
+git add .
+git commit -m "Initial commit"
+git status 
+git remote add origin <ssh url.git>
+git puch origin master
+

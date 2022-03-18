@@ -1,0 +1,372 @@
+<!-- <body
+  style="background: linear-gradient(135deg, #71b7e6, #9b59b6);">
+  <div class="top-content">
+    <div class="inner-bg" style="padding: 0px 0px 80px 0">
+      <div class="container">
+        <div class="row" style="margin-left: 17%; margin-right: 17%">
+          <div>
+            <div class="form-box">
+              <div class="form-top">
+                <div class="form-top-left">
+                  <h3 style="color: white">Complete the Following</h3>
+                </div>
+                <div class="form-top-right">
+                  <i class="fa fa-plane"></i>
+                </div>
+              </div>
+              <div class="form-bottom" style="color: white">
+                <form
+                  role="form"
+                  action="SearchFlights.do"
+                  method="post"
+                  class="flight-search-form"
+                >
+                  <div class="row">
+                    <div class="form-group col-lg-4 ui-widget">
+                      <label for="from">From</label>
+                      <input
+                        required
+                        type="text"
+                        name="from"
+                        placeholder="Departure City..."
+                        class="form-control"
+                        id="osearch"
+                        style="
+                          height: 50px;
+                          margin: 0;
+                          padding: 0 20px;
+                          vertical-align: middle;
+                          background: #fff;
+                          border: 3px solid #fff;
+                          font-family: 'Roboto', sans-serif;
+                          font-size: 16px;
+                          font-weight: 300;
+                          line-height: 50px;
+                          color: #888;
+                          -moz-border-radius: 4px;
+                          -webkit-border-radius: 4px;
+                          border-radius: 4px;
+                          -moz-box-shadow: none;
+                          -webkit-box-shadow: none;
+                          box-shadow: none;
+                          -o-transition: all 0.3s;
+                          -moz-transition: all 0.3s;
+                          -webkit-transition: all 0.3s;
+                          -ms-transition: all 0.3s;
+                          transition: all 0.3s;
+                        "
+                      />
+                    </div>
+                    <div class="form-group col-lg-4 ui-widget">
+                      <label for="to">To</label>
+                      <input
+                        required
+                        type="text"
+                        name="to"
+                        placeholder="Destination City..."
+                        class="form-control"
+                        id="dsearch"
+                        style="
+                          height: 50px;
+                          margin: 0;
+                          padding: 0 20px;
+                          vertical-align: middle;
+                          background: #fff;
+                          border: 3px solid #fff;
+                          font-family: 'Roboto', sans-serif;
+                          font-size: 16px;
+                          font-weight: 300;
+                          line-height: 50px;
+                          color: #888;
+                          -moz-border-radius: 4px;
+                          -webkit-border-radius: 4px;
+                          border-radius: 4px;
+                          -moz-box-shadow: none;
+                          -webkit-box-shadow: none;
+                          box-shadow: none;
+                          -o-transition: all 0.3s;
+                          -moz-transition: all 0.3s;
+                          -webkit-transition: all 0.3s;
+                          -ms-transition: all 0.3s;
+                          transition: all 0.3s;
+                        "
+                      />
+                    </div>
+                    <div class="form-group col-lg-4">
+                      <label for="depart">Departure Date</label>
+                      <input
+                        required
+                        type="date"
+                        name="depart"
+                        class="form-control"
+                        id="form-depart"
+                        style="
+                          height: 50px;
+                          margin: 0;
+                          padding: 0 20px;
+                          vertical-align: middle;
+                          background: #fff;
+                          border: 3px solid #fff;
+                          font-family: 'Roboto', sans-serif;
+                          font-size: 16px;
+                          font-weight: 300;
+                          line-height: 50px;
+                          color: #888;
+                          -moz-border-radius: 4px;
+                          -webkit-border-radius: 4px;
+                          border-radius: 4px;
+                          -moz-box-shadow: none;
+                          -webkit-box-shadow: none;
+                          box-shadow: none;
+                          -o-transition: all 0.3s;
+                          -moz-transition: all 0.3s;
+                          -webkit-transition: all 0.3s;
+                          -ms-transition: all 0.3s;
+                          transition: all 0.3s;
+                        "
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-lg-4">
+                      <label for="class">Class</label>
+                      <select
+                        required
+                        name="class"
+                        class="form-control"
+                        id="form-class"
+                        style="
+                          height: 50px;
+                          margin: 0;
+                          padding: 0 20px;
+                          vertical-align: middle;
+                          background: #fff;
+                          border: 3px solid #fff;
+                          font-family: 'Roboto', sans-serif;
+                          font-size: 16px;
+                          font-weight: 300;
+                          line-height: 50px;
+                          color: #888;
+                          -moz-border-radius: 4px;
+                          -webkit-border-radius: 4px;
+                          border-radius: 4px;
+                          -moz-box-shadow: none;
+                          -webkit-box-shadow: none;
+                          box-shadow: none;
+                          -o-transition: all 0.3s;
+                          -moz-transition: all 0.3s;
+                          -webkit-transition: all 0.3s;
+                          -ms-transition: all 0.3s;
+                          transition: all 0.3s;
+                        "
+                      >
+                        <option
+                          value="Economy"
+                          style="
+                            height: 50px;
+                            margin: 0;
+                            padding: 0 20px;
+                            vertical-align: middle;
+                            background: #fff;
+                            border: 3px solid #fff;
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 16px;
+                            font-weight: 300;
+                            line-height: 50px;
+                            color: #888;
+                            -moz-border-radius: 4px;
+                            -webkit-border-radius: 4px;
+                            border-radius: 4px;
+                            -moz-box-shadow: none;
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                            -o-transition: all 0.3s;
+                            -moz-transition: all 0.3s;
+                            -webkit-transition: all 0.3s;
+                            -ms-transition: all 0.3s;
+                            transition: all 0.3s;
+                          "
+                        >
+                          Economy
+                        </option>
+                        <option
+                          value="Business"
+                          style="
+                            height: 50px;
+                            margin: 0;
+                            padding: 0 20px;
+                            vertical-align: middle;
+                            background: #fff;
+                            border: 3px solid #fff;
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 16px;
+                            font-weight: 300;
+                            line-height: 50px;
+                            color: #888;
+                            -moz-border-radius: 4px;
+                            -webkit-border-radius: 4px;
+                            border-radius: 4px;
+                            -moz-box-shadow: none;
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                            -o-transition: all 0.3s;
+                            -moz-transition: all 0.3s;
+                            -webkit-transition: all 0.3s;
+                            -ms-transition: all 0.3s;
+                            transition: all 0.3s;
+                          "
+                        >
+                          Business
+                        </option>
+                        <option
+                          value="First Class"
+                          style="
+                            height: 50px;
+                            margin: 0;
+                            padding: 0 20px;
+                            vertical-align: middle;
+                            background: #fff;
+                            border: 3px solid #fff;
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 16px;
+                            font-weight: 300;
+                            line-height: 50px;
+                            color: #888;
+                            -moz-border-radius: 4px;
+                            -webkit-border-radius: 4px;
+                            border-radius: 4px;
+                            -moz-box-shadow: none;
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                            -o-transition: all 0.3s;
+                            -moz-transition: all 0.3s;
+                            -webkit-transition: all 0.3s;
+                            -ms-transition: all 0.3s;
+                            transition: all 0.3s;
+                          "
+                        >
+                          First Class
+                        </option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-4">
+                      <label for="people">No. of People</label>
+                      <input
+                        required
+                        type="number"
+                        min="1"
+                        max="4"
+                        placeholder="Number of People.."
+                        name="people"
+                        class="form-control"
+                        id="form-adults"
+                        style="
+                          height: 50px;
+                          margin: 0;
+                          padding: 0 20px;
+                          vertical-align: middle;
+                          background: #fff;
+                          border: 3px solid #fff;
+                          font-family: 'Roboto', sans-serif;
+                          font-size: 16px;
+                          font-weight: 300;
+                          line-height: 50px;
+                          color: #888;
+                          -moz-border-radius: 4px;
+                          -webkit-border-radius: 4px;
+                          border-radius: 4px;
+                          -moz-box-shadow: none;
+                          -webkit-box-shadow: none;
+                          box-shadow: none;
+                          -o-transition: all 0.3s;
+                          -moz-transition: all 0.3s;
+                          -webkit-transition: all 0.3s;
+                          -ms-transition: all 0.3s;
+                          transition: all 0.3s;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div style="text-align: center">
+                    <button
+                      style="margin-top: 5%"
+                      type="submit"
+                      style=""
+                      class="btn col-xs-5 col-md-5"
+                    >
+                      Search Flights
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body> -->
+
+<div class="wrapper">
+  <div class="container">
+    <div class="forms">
+      <div class="form login">
+        <span class="title">Flights</span>
+        <form (ngSubmit)="formSubmit()">
+          
+
+            <div class="trip">
+                <input type="radio" name="trip" id="dot-1">
+                <input type="radio" name="trip" id="dot-2">
+                <div class="category">
+                  <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="trip">ONEWAY</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="trip" id="dot-2">ROUNDTRIP</span>
+                </label>
+                </div>
+              </div>
+        <div class="user-details">
+            <div class="input-box">
+              <span class="details">From</span>
+              <input type="text" placeholder="From" />
+            </div>
+            <div class="input-box">
+              <span class="details">To</span>
+              <input type="text" placeholder="To" />
+            </div>
+          </div>
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Departure Date</span>
+              <input type="date" [value]="TodayDate"/>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Class</span>
+              <select >
+                <option value="Business">Economy</option>
+                <option value="Premium Economy">Premium Economy</option>
+                <option value="Business">Business</option>
+              </select>
+          
+            </div>
+            
+            
+
+
+            <div class="button">
+                <button type="submit">Search</button>
+              </div>
+
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

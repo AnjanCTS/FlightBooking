@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/API-gateway/API-gateway.iml" filepath="$PROJECT_DIR$/API-gateway/API-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Booking-Module/Booking-Module.iml" filepath="$PROJECT_DIR$/Booking-Module/Booking-Module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Flight_Booking.iml" filepath="$PROJECT_DIR$/.idea/Flight_Booking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User-Authorization-Module/User-Authorization-Module.iml" filepath="$PROJECT_DIR$/User-Authorization-Module/User-Authorization-Module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/airport-module/airport-module.iml" filepath="$PROJECT_DIR$/airport-module/airport-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-service-registry/eureka-service-registry.iml" filepath="$PROJECT_DIR$/eureka-service-registry/eureka-service-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flight-module/flight-module.iml" filepath="$PROJECT_DIR$/flight-module/flight-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-module/user-module.iml" filepath="$PROJECT_DIR$/user-module/user-module.iml" />
+    </modules>
+  </component>
+</project>

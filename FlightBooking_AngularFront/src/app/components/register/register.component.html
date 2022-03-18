@@ -1,0 +1,104 @@
+ <div class="wrapper">
+ <div class="container">
+    <div class="title">Registration</div>
+    <!-- {{userPass | json}} -->
+    <div class="content">
+      <form (ngSubmit)="formSubmit()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input 
+            required
+            (blur)="validateName()"
+            type="text" 
+            [(ngModel)]="user.name"
+            name="name"
+            placeholder="Enter your name">
+            <small *ngIf="nameFlag" style="color: red">Invalid Name</small>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input 
+            (blur)="validateUserName()"
+            type="text" 
+            [(ngModel)]="user.userName"
+            name="userName"
+            placeholder="Enter your username"
+            required
+            minlength="3"
+            maxlength="20">
+            <small *ngIf="UserNameFlag" style="color: red">Username must be at least 3 characters</small>
+
+            <!-- <div class="alert-danger" *ngIf="username.errors && (username.dirty || username.touched)">
+              <div *ngIf="username.errors?.['required']">Username is required</div>
+              <div *ngIf="username.errors?.['minlength']">
+                Username must be at least 3 characters
+              </div>
+              <div *ngIf="username.errors?.['maxlength']">
+                Username must be at most 20 characters
+              </div>
+            </div> -->
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input 
+            required
+            (blur)="validateEmail()"
+            type="text" 
+            [(ngModel)]="user.email"
+            name="email"
+            placeholder="Enter your email">
+            <small *ngIf="emailFlag" style="color: red">Invalid Email</small>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input 
+            required
+            (blur)="validatePhone()"
+            type="text" 
+            [(ngModel)]="user.phone"
+            name="phone"
+            maxlength="10"
+            placeholder="Enter your number">
+            <small *ngIf="phoneFlag" style="color: red">
+              The mobile number you entered does not seem to be valid</small>
+              <small *ngIf="PhoneSubmitFlag" style="color: red">
+                Enter Phone Number</small>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input 
+            type="password" 
+            [(ngModel)]="user.password"
+            name="password"
+            required
+            minlength="6"
+            #password="ngModel"
+            placeholder="Enter your password">
+            <div class="alert-danger" *ngIf="password.errors && (password.dirty || password.touched)">
+              <div *ngIf="password.errors?.['required']">Password is required</div>
+              <div *ngIf="password.errors?.['minlength']">
+                Password must be at least 6 characters
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input 
+            required
+            (blur)="validatePassword()"
+            type="password" 
+            [(ngModel)]="userPass.passwordd"
+            name="passwordd"
+            placeholder="Confirm your password">
+            <small *ngIf="PassFlag" style="color: red">Password didn't Matched</small>
+          </div>
+        </div>
+        <div class="button">
+          <button (click)="validate()" type="submit">Register</button>
+          <!-- <input type="clear" value="clear"> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

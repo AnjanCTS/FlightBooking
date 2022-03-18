@@ -1,0 +1,40 @@
+<div mat-dialog-content>
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Update Airport</span>
+                <form #login="ngForm" (ngSubmit)="formSubmit() ">
+                    <div class="input-field">
+                        <input type="text" 
+                        [(ngModel)]="airport.airportCode"
+                        name="airportCode"
+                        disabled="disabled"
+                        placeholder="Enter airportCode">
+                    </div>
+                    <div class="input-field">
+                        <input type="text" 
+                        [(ngModel)]="airport.airportState"
+                        name="airportState" placeholder="Enter airportState">
+                    </div>
+                    <div class="input-field">
+                        <input type="text" 
+                        [(ngModel)]="airport.airportName"
+                        name="airportName" placeholder="Enter airportName">
+                    </div>
+                    <!-- <div class="input-field button">
+                        <input type="button" value="Add">
+                    </div> -->
+
+
+                    <div class="button">
+                        <button type="submit">Update</button>
+                        <!-- <input type="clear" value="clear"> -->
+                      </div>
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
