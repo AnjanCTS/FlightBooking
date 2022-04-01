@@ -1,0 +1,85 @@
+<div class="wrapper">
+    <div class="container">
+       <div class="title">Schedule Flight</div>
+       <!-- {{flight | json}} -->
+       <div class="content">
+         <form #ScheduleForm="ngForm"(ngSubmit)="formSubmit(ScheduleForm)">
+           <div class="user-details">
+             <div class="input-box">
+               <span class="details">Flight Number</span>
+               <input 
+               type="text" 
+               (blur)="validateFlightNumber()"
+               [(ngModel)]="flight.flightNumber"
+               name="flightNumber"
+               placeholder="Enter Flight Number">
+              <small *ngIf="flightNumberFlag" style="color: red">{{flightErrorMsg}}</small>
+             </div>
+             <div class="input-box">
+               <span class="details">Airline Name</span>
+               <input 
+               type="text" 
+               (blur)="validateAirline()"
+               [(ngModel)]="flight.Airline"
+               name="Airline"
+               placeholder="Enter Airline Name">
+               <small *ngIf="AirlineFlag" style="color: red">{{AirlineErrorMsg}}</small>
+                 
+             </div>
+             <div class="input-box">
+               <span class="details">From</span>
+               <input 
+               type="text" 
+               (blur)="validateFrom()"
+               [(ngModel)]="flight.srcAirport"
+               name="srcAirport"
+               placeholder="Enter Source Airport">
+               <small *ngIf="FromFlag" style="color: red">{{FromErrorMsg}}</small>
+             </div>
+             <div class="input-box">
+               <span class="details">To</span>
+               <input 
+               type="text" 
+               (blur)="validateTo()"
+               [(ngModel)]="flight.dstnAirport"
+               name="dstnAirport"
+               placeholder="Enter Destination Airport">
+               <small *ngIf="ToFlag" style="color: red">{{ToErrorMsg}}</small>
+             </div>
+             <div class="input-box">
+               <span class="details">Depart Date</span>
+               <input 
+               type="date" 
+               (blur)="validateDate()"
+               [(ngModel)]="flight.deptDateTime"
+               name="deptDateTime"
+               [value]="TodayDate"
+               placeholder="Enter Departure Date">
+               <small *ngIf="DateFlag" style="color: red">{{dateErrorMsg}}</small>
+              
+             </div>
+             <div class="input-box">
+                <span class="details">Total Seats</span>
+                <input 
+                type="text" 
+                [(ngModel)]="flight.availableSeats"
+                name="availableSeats"
+                placeholder="Enter Total Available Seats ">
+              </div>
+              <div class="input-box">
+                <span class="details">Ticket Cost</span>
+                <input 
+                type="text" 
+                [(ngModel)]="flight.ticketCost"
+                name="ticketCost"
+                placeholder="Enter Ticket Fare">
+              </div>
+           </div>
+           <div class="button">
+             <button (click)="validate()" type="submit">Schedule</button>
+             <!-- <input type="clear" value="clear"> -->
+           </div>
+         </form>
+       </div>
+     </div>
+   </div>

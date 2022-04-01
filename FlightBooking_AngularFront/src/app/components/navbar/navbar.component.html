@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+   
+      <mat-icon routerLink="" class="iicon">flight</mat-icon>
+   
+    <span>Flight Booking</span>
+    <span class="example-spacer"></span>
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"> -->
+      <div class="edit">
+        <mat-icon 
+        *ngIf="!auth.isLoggedIn()"
+        routerLink="/login" class="iicon">login</mat-icon>
+      </div>
+
+      <div class="cur"
+      *ngIf="auth.isLoggedIn() && roles=='ADMIN'"
+      routerLink="/admin">
+       {{auth.getUser().username}}
+    </div>
+    <div class="cur"
+      *ngIf="auth.isLoggedIn() && roles=='USER'"
+      routerLink="/user-dashboard">
+       {{auth.getUser().username}}
+    </div>
+      
+<!-- </button> -->
+    <!-- <button mat-icon-button 
+      class="example-icon" 
+      aria-label="Example icon-button with share icon"> -->
+       <div class="edit">
+        <mat-icon 
+        (click)="logout()"
+        *ngIf="auth.isLoggedIn()"
+        class="iicon">logout</mat-icon>
+      </div>
+    <!-- </button> -->
+  </mat-toolbar>
+  

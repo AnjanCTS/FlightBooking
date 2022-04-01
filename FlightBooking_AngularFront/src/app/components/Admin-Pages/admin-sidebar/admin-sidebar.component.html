@@ -1,0 +1,24 @@
+<mat-card class="con">
+
+    <mat-action-list>
+      
+        <div mat-subheader>Menu</div>
+
+          <button routerLink="/admin" mat-list-item><mat-icon mat-list-icon>home</mat-icon>Home</button>
+          <!-- Airport details -->
+          <button mat-list-item  routerLink="/admin/addAirport">
+          <mat-icon mat-list-icon>add_circle_outline</mat-icon>Add Airport</button>
+          <button mat-list-item  routerLink="/admin/aiportDetails">
+          <mat-icon mat-list-icon>view_list</mat-icon>View Airport</button>
+          <!-- Flight details -->
+          <button mat-list-item  routerLink="/admin/addFlight">
+          <mat-icon mat-list-icon>add_circle_outline</mat-icon>Schedule Flight</button>
+          <button mat-list-item  routerLink="/admin/flightDetails">
+          <mat-icon mat-list-icon>view_list</mat-icon>View Flight</button>
+          <button mat-list-item  routerLink="/admin/flightSearch">
+            <mat-icon mat-list-icon>search</mat-icon>Search Flight</button>
+
+
+
+    </mat-action-list>
+</mat-card>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="airport-module" />
+        <module name="flight-module" />
+        <module name="eureka-service-registry" />
+        <module name="user-module" />
+        <module name="Booking-Module" />
+        <module name="API-gateway" />
+        <module name="User-Authorization-Module" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="airport-module" target="1.8" />
+      <module name="API-gateway" target="1.8" />
+      <module name="Booking-Module" target="1.8" />
+      <module name="eureka-service-registry" target="1.8" />
+      <module name="flight-module" target="1.8" />
+      <module name="User-Authorization-Module" target="1.8" />
+      <module name="user-module" target="1.8" />
+      <module name="zuul-api-gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="API-gateway" options="-parameters" />
+      <module name="Booking-Module" options="-parameters" />
+      <module name="User-Authorization-Module" options="-parameters" />
+      <module name="airport-module" options="-parameters" />
+      <module name="eureka-service-registry" options="-parameters" />
+      <module name="flight-module" options="-parameters" />
+      <module name="user-module" options="-parameters" />
+      <module name="zuul-api-gateway" options="-parameters" />
+    </option>
+  </component>
+</project>

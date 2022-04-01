@@ -1,0 +1,76 @@
+  server:
+    port: 9191
+
+  spring:
+    application:
+      name: API-GATEWAY
+    cloud:
+      gateway:
+        routes:
+          - id: USER-SERVICE
+            uri: lb://USER-SERVICE
+            predicates:
+              - Path=/user/**
+          - id: FLIGHT-SERVICE
+            uri: lb://FLIGHT-SERVICE
+            predicates:
+              - Path=/flight/**
+            filters:
+              - AuthFilter
+          - id: AIRPORT-SERVICE
+            uri: lb://AIRPORT-SERVICE
+            predicates:
+              - Path=/airport/**
+            filters:
+              - AuthFilter
+          - id: BOOKING-SERVICE
+            uri: lb://BOOKING-SERVICE
+            predicates:
+              - Path=/book/**
+            filters:
+              - AuthFilter
+          - id: USER-AUTH-SERVICE
+            uri: lb://USER-AUTH-SERVICE
+            predicates:
+              - Path=/api/auth/**
+        default-filters:
+          - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        globalcors:
+          cors-configurations:
+            '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
+    zipkin:
+        base-url: http://localhost:9411/
+#    datasource:
+#      url: jdbc:mysql://localhost:3306/flight_booking
+#      username: root
+#      password: Password@123
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#    jpa:
+#      hibernate:
+#          ddl-auto: update
+#      show-sql: true
+#      properties:
+#           hibernate:
+#              format_sql: true
+#              dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka
+    instance:
+       preferIpAddress: true
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+    endpoint:
+      health:
+        show-details: always
+
+
+

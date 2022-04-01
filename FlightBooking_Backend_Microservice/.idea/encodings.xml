@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/API-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/API-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Booking-Module/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Booking-Module/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/User-Authorization-Module/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/User-Authorization-Module/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/airport-module/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/airport-module/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-service-registry/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flight-module/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-module/src/main/java" charset="UTF-8" />
+  </component>
+</project>

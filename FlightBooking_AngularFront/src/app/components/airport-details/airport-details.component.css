@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .mat-icon-button{
+    /* background-color: red;: linear-gradient(135deg, #71b7e6, #9b59b6); */
+    background-color: red;
+  }
+  
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.edit{
+    margin-left: 6px;
+    display: inline-block;
+}
+.iicon:hover{
+    cursor: pointer;
+    transform: scale(0.90);
+}
+
+.wrapper{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    
+  }
