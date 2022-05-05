@@ -40,6 +40,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BookFlightComponent } from './components/User-Pages/book-flight/book-flight.component';
 import { SearchTicketComponent } from './components/User-Pages/search-ticket/search-ticket.component';
+import { HighlightDirective } from './components/home/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { SearchTicketComponent } from './components/User-Pages/search-ticket/sea
     UserProfileComponent,
     UserSidebarComponent,
     BookFlightComponent,
-    SearchTicketComponent
+    SearchTicketComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

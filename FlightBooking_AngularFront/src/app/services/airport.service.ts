@@ -27,7 +27,7 @@ export class AirportService {
   }
 
   deleteAirport(id: number): Observable<any>{
-    return this.http.delete(`${baseUrl}/airport/deleteAirport/${id}`,{ responseType: 'text'});
+    return this.http.delete(`${baseUrl}/airport/${id}`,{ responseType: 'text'});
   }
 
 }

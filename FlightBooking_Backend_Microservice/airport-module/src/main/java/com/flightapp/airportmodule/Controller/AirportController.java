@@ -1,4 +1,4 @@
-package com.flightapp.airportmodule.Controller;
+package com.flightapp.airportmodule.controller;
 
 import com.flightapp.airportmodule.model.Airport;
 import com.flightapp.airportmodule.service.AirportService;
@@ -14,9 +14,13 @@ public class AirportController {
     @Autowired
     private AirportService airportService;
 
+//    public void setAirportService(AirportService airportService) {
+//        this.airportService = airportService;
+//    }
+
     @GetMapping("/test")
-    public String test_port(){
-        return "Airpot Service";
+    public String testPort() {
+        return "Airport Service";
     }
 
     @GetMapping("/{id}")

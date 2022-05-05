@@ -63,6 +63,13 @@
 			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.7</version>
+		</dependency>
+
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -91,6 +98,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>Flight_Booking_API_Gateway</finalName>
 	</build>
 
 </project>
