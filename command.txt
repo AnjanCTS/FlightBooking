@@ -6,5 +6,11 @@ git add .
 git commit -m "Initial commit"
 git status 
 git remote add origin <ssh url.git>
-git puch origin master
+git push origin master
 
+
+
+
+ git remote set-url origin git@github.com:AnjanCTS/Flight_Final.git
+
+git push -f origin master
