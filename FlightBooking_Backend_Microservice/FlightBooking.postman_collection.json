@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "25a9d437-4fa2-4e6d-b90c-9498c976980a",
+		"name": "FlightBooking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Admin123\", \r\n    \"password\": \"Admin123\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-88-116-14.compute-1.amazonaws.com:9191/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"ec2-3-88-116-14",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n  \"name\":\"Admin\",\r\n  \"userName\":\"Admin124\",\r\n  \"password\":\"Admin124\",\r\n  \"email\":\"Admin1@gmail.com\",\r\n  \"phone\":\"1234567890\",\r\n  \"userRole\":\"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-88-116-14.compute-1.amazonaws.com:9191/user",
+					"protocol": "http",
+					"host": [
+						"ec2-3-88-116-14",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "9191",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

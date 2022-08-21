@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  Naming-Server:
+    image: anjancts/eureka-service-registry:0.0.1
+    ports:
+      - "8761:8761"
+    networks:
+      - flight_network
+
+  Gateway-Server:
+    image: anjancts/api-gateway:0.0.1-SNAPSHOT
+    ports:
+      - "9191:9191"
+    networks:
+      - flight_network
+    depends_on:
+      - Naming-Server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://Naming-Server:8761/eureka
+
+networks:
+  flight_network:
+
+

@@ -64,7 +64,6 @@ public class AuthController {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String jwt = jwtUtils.generateJwtToken(authentication);
 		System.out.println("jwt : "+jwt);
-		
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
 //		 String roles = userDetails.getAuthorities().stream()
 //		 		.map(item -> item.getAuthority())
@@ -76,8 +75,7 @@ public class AuthController {
 												 userDetails.getEmail(),
 				                                 userDetails.getUserRole(),
 				                                 userDetails.getPhone(),
-				                                 userDetails.isEnabledd(),userDetails.getName())
-				                                  );
+				                                 userDetails.isEnabledd(),userDetails.getName()));
 	}
 
 	@PostMapping("/signup")

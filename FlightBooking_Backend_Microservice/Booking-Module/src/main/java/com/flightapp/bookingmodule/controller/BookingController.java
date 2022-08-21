@@ -33,7 +33,7 @@ public class BookingController {
     private RestTemplate restTemplate;
 
 
-    String url = "http://FLIGHT-SERVICE/flight/searchFlight";
+    String url = "http://FLIGHT-SERVICE/flight/searchFlight?srcAirport";
 
     @GetMapping("/search")
     public List<ScheduleFlight> searchFlight(

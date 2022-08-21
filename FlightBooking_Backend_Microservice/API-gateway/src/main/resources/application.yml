@@ -41,8 +41,6 @@
               allowedOrigins: "*"
               allowedMethods: "*"
               allowedHeaders: "*"
-    zipkin:
-        base-url: http://localhost:9411/
 #    datasource:
 #      url: jdbc:mysql://localhost:3306/flight_booking
 #      username: root
@@ -59,7 +57,7 @@
   eureka:
     client:
       serviceUrl:
-        defaultZone: http://192.168.1.5:8761/eureka
+        defaultZone: http://localhost:8761/eureka
     instance:
        preferIpAddress: true
 

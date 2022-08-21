@@ -18,6 +18,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<perl.path>path/to/perl</perl.path>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -73,6 +74,11 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-core</artifactId>
 		</dependency>
@@ -105,13 +111,73 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>pre-integration-test</id>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>post-integration-test</id>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
+					<wait>1000</wait>
+					<maxAttempts>180</maxAttempts>
+					<image>
+						<name>anjancts/${project.artifactId}:${project.version}</name>
+					</image>
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<apiDocsUrl>http://localhost:9002/v3/api-docs</apiDocsUrl>
+					<outputFileName>openapi.json</outputFileName>
+<!--					<outputDir>/home/spring-doc/maven-output</outputDir>-->
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>execute-inso-cli</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>${perl.path}</executable>
+					<arguments>
+						<argument>generate</argument>
+						<argument>config</argument>
+						<argument>target/openapi.json</argument>
+						<argument>--output</argument>
+						<argument>/kong/kong.yml</argument>
+						<argument>--type</argument>
+						<argument>declarative</argument>
+						<argument>--verbose</argument>
+					</arguments>
 				</configuration>
 			</plugin>
 		</plugins>

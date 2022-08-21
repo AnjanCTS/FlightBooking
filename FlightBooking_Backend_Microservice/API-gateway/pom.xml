@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.flightapp</groupId>
-	<artifactId>API-gateway</artifactId>
+	<artifactId>api-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>API-gateway</name>
 	<description>API gateway for Flight Booking</description>
@@ -70,6 +70,11 @@
 			<version>1.6.7</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
+		</dependency>
+
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -89,16 +94,75 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
+					<wait>1000</wait>
+					<maxAttempts>180</maxAttempts>
+				</configuration>
+				<executions>
+					<execution>
+						<id>pre-integration-test</id>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>post-integration-test</id>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+<!--				<configuration>-->
+<!--					<image>-->
+<!--						<name>anjancts/${project.artifactId}:${project.version}</name>-->
+<!--					</image>-->
+<!--					<pullPolicy>IF_NOT_PRESENT</pullPolicy>-->
+<!--				</configuration>-->
+			</plugin>
+			<plugin>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<apiDocsUrl>http://localhost:9191/v3/api-docs</apiDocsUrl>
+					<outputFileName>openapi.json</outputFileName>
+					<outputDir>/home/spring-doc/maven-output</outputDir>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>execute-inso-cli</id>
+						<phase>package</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<arguments>
+						<argument>generate</argument>
+						<argument>config</argument>
+						<argument>target/openapi.json</argument>
+						<argument>--output</argument>
+						<argument>../kong/kong.yml</argument>
+						<argument>--type</argument>
+						<argument>declarative</argument>
+						<argument>--verbose</argument>
+					</arguments>
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>Flight_Booking_API_Gateway</finalName>
 	</build>
 
 </project>

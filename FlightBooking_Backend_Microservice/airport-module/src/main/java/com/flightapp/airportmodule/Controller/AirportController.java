@@ -22,7 +22,6 @@ public class AirportController {
     public String testPort() {
         return "Airport Service";
     }
-
     @GetMapping("/{id}")
     public Airport viewAirport(@PathVariable("id") String airportCode) throws Exception {
         return airportService.viewAirport(airportCode);

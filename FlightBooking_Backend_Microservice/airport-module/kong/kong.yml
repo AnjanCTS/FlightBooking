@@ -1,0 +1,66 @@
+_format_version: "1.1"
+services:
+  - name: AirportModule
+    protocol: http
+    host: 192.168.1.6
+    port: 9002
+    path: /
+    plugins: []
+    routes:
+      - tags:
+          - OAS3_import
+          - OAS3file_openapi.json
+        name: AirportModule-viewAllAirport
+        methods:
+          - GET
+        paths:
+          - /airport$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_openapi.json
+        name: AirportModule-modifyAirport
+        methods:
+          - PUT
+        paths:
+          - /airport$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_openapi.json
+        name: AirportModule-addAirport
+        methods:
+          - POST
+        paths:
+          - /airport/add$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_openapi.json
+        name: AirportModule-viewAirport
+        methods:
+          - GET
+        paths:
+          - /airport/(?<id>[^\/]+)$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_openapi.json
+        name: AirportModule-removeAirport
+        methods:
+          - DELETE
+        paths:
+          - /airport/(?<id>[^\/]+)$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_openapi.json
+        name: AirportModule-testPort
+        methods:
+          - GET
+        paths:
+          - /airport/test$
+        strip_path: false
+    tags:
+      - OAS3_import
+      - OAS3file_openapi.json
